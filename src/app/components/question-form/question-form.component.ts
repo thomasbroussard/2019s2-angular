@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Question } from 'src/app/datamodel/question';
+import { QuestionsService } from 'src/app/services/questions.service';
 
 @Component({
   selector: 'app-question-form',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionFormComponent implements OnInit {
 
-  constructor() { }
+  question : Question = new Question("");
+
+
+  constructor(private questionService : QuestionsService) { }
 
   ngOnInit() {
   }
+
+  save(){
+    this.questionService.save(this.question);
+  }
+
 
 }
