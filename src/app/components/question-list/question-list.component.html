@@ -1,0 +1,12 @@
+<p>question-list works!</p>
+
+<input [(ngModel)]="criterion"/>
+
+
+<button (click)="search()"><label>Search</label></button>
+
+<div *ngFor="let question of questionList">
+    <p>content</p>
+        <p>{{ question.questionContent }}</p>
+</div>
+    
